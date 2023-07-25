@@ -10,6 +10,10 @@
   ],
   "license": "MIT",
   "repository": "https://github.com/emerson-marini/learnstorybook-design-system.git",
+  "author": {
+    "name": "Emerson Marini",
+    "email": "emerson.marini@getbusy.com"
+  },
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "build-storybook": "storybook build",
