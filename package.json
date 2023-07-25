@@ -11,15 +11,16 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
-    "watch": "rollup --watch -c --bundleConfigAsCjs",
+    "build-storybook": "storybook build",
+    "build-storybook-docs": "storybook build  --docs",
+    "chromatic": "npx chromatic --project-token=chpt_3c20fe9f06b6dd7",
     "clean": "rimraf ./dist",
     "prebuild": "yarn clean",
     "release": "yarn build && auto shipit",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_3c20fe9f06b6dd7",
-    "test-storybook": "test-storybook"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-storybook": "test-storybook",
+    "watch": "rollup --watch -c --bundleConfigAsCjs"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
