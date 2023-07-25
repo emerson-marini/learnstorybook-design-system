@@ -9,7 +9,7 @@
     "README.md"
   ],
   "license": "MIT",
-  "repository": "https://github.com/your-username/learnstorybook-design-system.git",
+  "repository": "https://github.com/emerson-marini/learnstorybook-design-system.git",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "build-storybook": "storybook build",
