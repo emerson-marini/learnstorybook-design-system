@@ -80,6 +80,5 @@
       "optional": true
     }
   },
-  "packageManager": "yarn@3.6.1",
-  "_id": "learnstorybook-design-system-template@0.1.0"
+  "packageManager": "yarn@3.6.1"
 }
