@@ -1,7 +1,7 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "@emerson-marini/learnstorybook-design-system",
+  "description": "Storybook design systems tutorial",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -9,6 +9,7 @@
     "README.md"
   ],
   "license": "MIT",
+  "repository": "https://github.com/your-username/learnstorybook-design-system.git",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "build-storybook": "storybook build",
@@ -80,6 +81,5 @@
     }
   },
   "packageManager": "yarn@3.6.1",
-  "readme": "ERROR: No README data found!",
   "_id": "learnstorybook-design-system-template@0.1.0"
 }
