@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { Button } from './Button';
 import { Icon } from '../Icon/Icon';
 import { StoryLinkWrapper } from '../LinkWrapper';
+import { userEvent, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 const CustomButton = styled.button`
   border: 1px solid green;
@@ -22,7 +24,6 @@ export default {
 };
 
 export const AllButtons = {
-  name: 'all buttons',
   render: () => (
     <>
       <Button appearance='primary'>Primary</Button>
@@ -78,7 +79,6 @@ export const AllButtons = {
 };
 
 export const buttonWrapper = {
-  name: 'button wrapper',
   render: () => (
     <div>
       <ButtonWrapper>Original Button Wrapper</ButtonWrapper>
@@ -163,7 +163,6 @@ export const buttonWrapper = {
 };
 
 export const AnchorWrapper = {
-  name: 'anchor wrapper',
   render: () => (
     <div>
       <StoryLinkWrapper to='http://storybook.js.org'>
@@ -324,4 +323,27 @@ export const AnchorWrapper = {
       </Button>
     </div>
   ),
+};
+
+/*
+ * New story using the play function.
+ * See https://storybook.js.org/docs/react/writing-stories/play-function
+ * to learn more about the play function.
+ */
+export const WithInteractions = {
+  args: {
+    appearance: 'primary',
+    href: 'http://storybook.js.org',
+    ButtonWrapper: StoryLinkWrapper,
+    children: 'Button',
+  },
+  play: async ({ canvasElement }) => {
+    // Assigns canvas to the component root element
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('link'));
+    expect(canvas.getByRole('link')).toHaveAttribute(
+      'href',
+      'http://storybook.js.org',
+    );
+  },
 };
